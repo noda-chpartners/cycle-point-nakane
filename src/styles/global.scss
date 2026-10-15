@@ -12,7 +12,7 @@ $serif: "Shippori Mincho", "Yu Mincho", "Hiragino Mincho ProN", serif;
 $sans: "Zen Kaku Gothic New", "Hiragino Sans", "Yu Gothic", sans-serif;
 $en: "Jost", "Avenir Next", sans-serif;
 
-$nav: 980px;
+$nav: 1080px;
 $header: 86px;
 
 *,
@@ -440,7 +440,6 @@ ol {
   align-items: end;
   color: $cream-text;
   background: $dark;
-  overflow: hidden;
 }
 
 .hero__media {
@@ -506,10 +505,10 @@ ol {
 
 .hero__title {
   font-family: $serif;
-  font-size: clamp(2.7rem, 7.2vw, 5.5rem);
+  font-size: clamp(2.15rem, 7.2vw, 5.5rem);
   font-weight: 500;
   line-height: 1.22;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
 }
 
 .hero__title .line {
@@ -603,7 +602,6 @@ ol {
     font-size: 1.05rem;
     font-weight: 500;
     letter-spacing: 0.04em;
-    white-space: nowrap;
   }
 }
 
@@ -1097,18 +1095,125 @@ ol {
 }
 
 @media (max-width: 719px) {
+  .header__bar {
+    width: min(1180px, calc(100% - 24px));
+  }
+
+  .brand {
+    gap: 0.55rem;
+  }
+
+  .brand__mark {
+    width: 56px;
+    height: 38px;
+
+    img {
+      width: 46px;
+    }
+  }
+
+  .brand__name {
+    letter-spacing: 0.04em;
+  }
+
+  .hero__copy {
+    width: min(1120px, calc(100% - 32px));
+    padding: calc($header + 1.25rem) 0 5.75rem;
+  }
+
+  .hero__shade {
+    background:
+      linear-gradient(to top, rgba(18, 12, 8, 0.78) 0%, rgba(18, 12, 8, 0.28) 46%, rgba(18, 12, 8, 0.18) 100%);
+  }
+
+  .hero__lead {
+    font-size: 0.95rem;
+  }
+
   .hero__scroll {
     display: none;
   }
+
+  .hero__wave {
+    height: 58px;
+  }
+
+  .wrap {
+    width: min(1120px, calc(100% - 32px));
+  }
+
+  .section {
+    padding: 3.4rem 0;
+  }
+
+  .heading {
+    font-size: clamp(1.7rem, 8vw, 2.4rem);
+  }
+
+  .info__row {
+    grid-template-columns: 1fr;
+    gap: 0.1rem;
+    padding: 0.95rem 1.05rem;
+  }
+
+  .phone {
+    font-size: 1.35rem;
+  }
+
+  .concept__year {
+    font-size: clamp(3rem, 18vw, 4.5rem);
+    right: 0.4rem;
+  }
+
+  .drawer {
+    padding: 5.6rem 1.25rem 2rem;
+  }
+
+  .drawer nav a {
+    font-size: clamp(1.45rem, 7.2vw, 2rem);
+  }
+
+  .shot {
+    min-height: 220px;
+  }
+
+  .map {
+    min-height: 280px;
+  }
 }
 
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .brand__since {
     display: none;
   }
 }
 
+@media (max-height: 740px) and (orientation: landscape) {
+  .hero__copy {
+    padding-top: calc($header + 0.8rem);
+    padding-bottom: 4.6rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}
+
 @media (min-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: 1.15fr 0.85fr;
+  }
+
+  .shot {
+    min-height: 320px;
+  }
+}
+
+@media (min-width: 900px) {
   .facts {
     grid-template-columns: repeat(4, 1fr);
 
@@ -1124,22 +1229,20 @@ ol {
     }
   }
 
-  .cards {
-    grid-template-columns: 1fr 1fr;
+  .concept__grid,
+  .app__grid,
+  .access__grid {
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 2.4rem;
   }
 
-  .gallery {
-    grid-template-columns: 1.15fr 0.85fr;
+  .footer__top {
+    grid-template-columns: 1.3fr 1fr auto;
+    align-items: start;
   }
 
   .shot {
     min-height: 420px;
-  }
-
-  .app__grid,
-  .access__grid {
-    grid-template-columns: 0.86fr 1.14fr;
-    gap: 3.2rem;
   }
 }
 
@@ -1147,6 +1250,10 @@ ol {
   .nav,
   .header__ig {
     display: flex;
+  }
+
+  .nav {
+    gap: 1.15rem;
   }
 
   .menu-btn,
@@ -1159,13 +1266,24 @@ ol {
     gap: 4.5rem;
   }
 
+  .app__grid,
+  .access__grid {
+    grid-template-columns: 0.86fr 1.14fr;
+    gap: 3.2rem;
+  }
+
   .cards {
     grid-template-columns: repeat(4, 1fr);
   }
 
   .footer__top {
-    grid-template-columns: 1.3fr 1fr auto;
     align-items: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav {
+    gap: 1.55rem;
   }
 }
 
