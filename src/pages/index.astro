@@ -10,9 +10,9 @@ import entrance from "../assets/images/7ED6D74C-151A-4916-8B39-C4899D74DFAC.jpeg
 import wall from "../assets/images/A74988F7-C3C2-463B-8F86-422BAC48C83E.jpeg";
 import appPhoto from "../assets/images/IMG_2680.jpg";
 
-const title = "サイクルポイントナカネ｜大田区山王の自転車屋";
+const title = "サイクルポイントナカネ｜大田区山王・大森の自転車屋";
 const description =
-  "創業大正9年。東京都大田区山王の自転車店、サイクルポイントナカネ。こども自転車、ママチャリ、電動アシスト、スポーツ車まで。JR大森駅から徒歩10分。営業 10:00〜18:30、火曜定休。";
+  "大田区山王の自転車屋、サイクルポイントナカネ。創業大正9年。こども自転車・ママチャリ・電動アシスト・スポーツ車。JR大森駅徒歩10分。10:00〜18:30、火曜定休。電話 03-3771-1644。";
 
 const instagram = "https://www.instagram.com/c.p.nakane/";
 const facebook = "https://www.facebook.com/c.p.nakane/";
@@ -39,43 +39,79 @@ const mapUrl =
   "https://www.google.com/maps/search/?api=1&query=" +
   encodeURIComponent("東京都大田区山王3-9-2 サイクルポイントナカネ");
 
-const site = Astro.site?.href;
+const siteUrl = new URL("/", Astro.site ?? Astro.url).href;
+const shareImage = new URL("/ogp.png", Astro.site ?? Astro.url).href;
 const schema = {
   "@context": "https://schema.org",
-  "@type": "BicycleStore",
-  name: "サイクルポイントナカネ",
-  telephone: "03-3771-1644",
-  image: site ? new URL("/ogp.png", site).href : "/ogp.png",
-  ...(site ? { url: new URL("/", site).href } : {}),
-  currenciesAccepted: "JPY",
-  paymentAccepted: "Cash",
-  address: {
-    "@type": "PostalAddress",
-    postalCode: "143-0023",
-    addressCountry: "JP",
-    addressRegion: "東京都",
-    addressLocality: "大田区",
-    streetAddress: "山王3-9-2 スプレスター大森山王1F",
-  },
-  openingHoursSpecification: [
-    "Monday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ].map((day) => ({
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: day,
-    opens: "10:00",
-    closes: "18:30",
-  })),
-  sameAs: [instagram, facebook, appStore, googlePlay],
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${siteUrl}#website`,
+      url: siteUrl,
+      name: "サイクルポイントナカネ",
+      alternateName: "Cycle Point Nakane",
+      inLanguage: "ja",
+      description,
+      publisher: { "@id": `${siteUrl}#store` },
+    },
+    {
+      "@type": "BicycleStore",
+      "@id": `${siteUrl}#store`,
+      name: "サイクルポイントナカネ",
+      alternateName: ["Cycle Point Nakane", "サイクルポイント ナカネ"],
+      description,
+      slogan: "この街の、自転車屋さん。",
+      url: siteUrl,
+      image: shareImage,
+      logo: new URL("/apple-touch-icon.png", Astro.site ?? Astro.url).href,
+      telephone: "+81-3-3771-1644",
+      currenciesAccepted: "JPY",
+      paymentAccepted: "現金",
+      foundingDate: "1920",
+      hasMap: mapUrl,
+      address: {
+        "@type": "PostalAddress",
+        postalCode: "143-0023",
+        addressCountry: "JP",
+        addressRegion: "東京都",
+        addressLocality: "大田区",
+        streetAddress: "山王3-9-2 スプレスター大森山王1F",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: 35.581635,
+        longitude: 139.722046,
+      },
+      areaServed: {
+        "@type": "AdministrativeArea",
+        name: "大田区",
+        containedInPlace: {
+          "@type": "AdministrativeArea",
+          name: "東京都",
+        },
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "10:00",
+        closes: "18:30",
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+81-3-3771-1644",
+        contactType: "customer service",
+        areaServed: "JP",
+        availableLanguage: "Japanese",
+      },
+      knowsAbout: ["こども自転車", "ママチャリ", "電動アシスト自転車", "スポーツ車"],
+      sameAs: [instagram, facebook, appStore, googlePlay],
+    },
+  ],
 };
 ---
 
 <Base title={title} description={description}>
-  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schema)} />
+  <script slot="head" type="application/ld+json" is:inline set:html={JSON.stringify(schema).replace(/</g, "\\u003c")} />
 
   <div class="progress" data-progress aria-hidden="true"></div>
 
@@ -466,11 +502,11 @@ const schema = {
       <div class="footer__top">
         <div>
           <Image src={logoLockup} alt="サイクルポイントナカネ" class="footer__logo" widths={[280, 384]} sizes="220px" />
-          <p class="footer__address">
+          <address class="footer__address">
             〒143-0023<br />
             東京都大田区山王3-9-2<br />
             スプレスター大森山王1F 山王店
-          </p>
+          </address>
         </div>
         <nav aria-label="フッターメニュー">
           <a href="#top">HOME</a>
