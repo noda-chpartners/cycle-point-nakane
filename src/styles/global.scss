@@ -670,6 +670,26 @@ ol {
 .concept__copy {
   min-width: 0;
   max-width: 100%;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.concept__body {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: 1.5rem;
+  max-width: 100%;
+
+  p,
+  br {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 720px) {
+  .concept__body br {
+    display: none;
+  }
 }
 
 .concept .heading {
@@ -681,12 +701,6 @@ ol {
     display: block;
     max-width: 100%;
   }
-}
-
-.concept__body {
-  display: grid;
-  gap: 1.15rem;
-  margin-top: 1.5rem;
 }
 
 .concept__points {
