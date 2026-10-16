@@ -650,8 +650,13 @@ ol {
 
 .concept__grid {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 2.5rem;
   align-items: center;
+
+  > * {
+    min-width: 0;
+  }
 }
 
 .concept__body {
@@ -702,10 +707,10 @@ ol {
 .concept__year {
   position: absolute;
   z-index: 0;
-  top: -1.4rem;
-  right: -0.2rem;
+  top: 0.7rem;
+  right: 0.8rem;
   font-family: $en;
-  font-size: clamp(4.5rem, 10vw, 7rem);
+  font-size: clamp(2.4rem, 12vw, 3.4rem);
   font-weight: 500;
   letter-spacing: 0.04em;
   line-height: 1;
@@ -720,6 +725,8 @@ ol {
 .frame {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 100%;
   overflow: hidden;
   border-radius: 28px;
   background: $paper-deep;
@@ -729,6 +736,8 @@ ol {
     inset: 0;
     width: 100%;
     height: 100%;
+    max-width: none;
+    max-height: none;
     object-fit: cover;
     transition: transform 0.8s ease;
   }
@@ -739,7 +748,7 @@ ol {
 }
 
 .concept .frame {
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
 }
 
 .frame figcaption,
@@ -789,6 +798,8 @@ ol {
     inset: 0;
     width: 100%;
     height: 100%;
+    max-width: none;
+    max-height: none;
     object-fit: cover;
     object-position: center 55%;
   }
@@ -899,6 +910,8 @@ ol {
     inset: 0;
     width: 100%;
     height: 100%;
+    max-width: none;
+    max-height: none;
     object-fit: cover;
     object-position: center 20%;
   }
@@ -1161,9 +1174,8 @@ ol {
     font-size: 1.35rem;
   }
 
-  .concept__year {
-    font-size: clamp(3rem, 18vw, 4.5rem);
-    right: 0.4rem;
+  .concept__grid {
+    gap: 1.75rem;
   }
 
   .drawer {
@@ -1265,6 +1277,16 @@ ol {
   .concept__grid {
     grid-template-columns: 1.05fr 0.95fr;
     gap: 4.5rem;
+  }
+
+  .concept .frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .concept__year {
+    top: -1.4rem;
+    right: -0.2rem;
+    font-size: clamp(4.5rem, 10vw, 7rem);
   }
 
   .app__grid,
