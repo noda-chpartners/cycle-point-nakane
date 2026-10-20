@@ -841,11 +841,15 @@ ol {
 
 .cards {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: stretch;
   gap: 0.9rem;
   margin-top: 1rem;
 }
 
 .card {
+  min-width: 0;
+  height: 100%;
   padding: 1.35rem 1.2rem 1.45rem;
   background: $cream;
   border-radius: 22px;
@@ -893,10 +897,57 @@ ol {
   font-size: 0.95rem;
 }
 
-.gallery {
-  display: grid;
-  gap: 0.8rem;
-  margin-top: 2.2rem;
+.reel {
+  overflow: hidden;
+  max-width: 100%;
+  margin-top: 1.6rem;
+}
+
+.lineup .reel {
+  margin-top: clamp(3.2rem, 7vw, 5rem);
+}
+
+.reel__track {
+  display: flex;
+  width: max-content;
+  animation: reel-scroll 32s linear infinite;
+}
+
+.reel--shop .reel__track {
+  animation-duration: 68s;
+}
+
+.reel:hover .reel__track {
+  animation-play-state: paused;
+}
+
+.reel__group {
+  display: flex;
+  gap: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.reel .shot {
+  flex: 0 0 auto;
+  width: auto;
+  height: clamp(210px, 28vw, 320px);
+  min-width: 0;
+  min-height: 0;
+  aspect-ratio: 3 / 4;
+}
+
+.reel .shot--land {
+  aspect-ratio: 4 / 3;
+}
+
+@keyframes reel-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .shot {
@@ -1251,10 +1302,6 @@ ol {
     grid-template-columns: 1fr 1fr;
   }
 
-  .gallery {
-    grid-template-columns: 1.15fr 0.85fr;
-  }
-
   .shot {
     min-height: 320px;
   }
@@ -1349,5 +1396,9 @@ ol {
   .card:hover,
   .btn:hover {
     transform: none;
+  }
+
+  .reel__track {
+    animation: none;
   }
 }

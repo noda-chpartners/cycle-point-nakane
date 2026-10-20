@@ -9,6 +9,16 @@ import street from "../assets/images/822D1A2E-A383-421C-A00B-4E0822B92004.jpeg";
 import entrance from "../assets/images/7ED6D74C-151A-4916-8B39-C4899D74DFAC.jpeg";
 import wall from "../assets/images/A74988F7-C3C2-463B-8F86-422BAC48C83E.jpeg";
 import appPhoto from "../assets/images/IMG_2680.jpg";
+import bikeCity from "../assets/tuika/59C460A1-819E-4610-83BD-BB54DD22DE86.jpeg";
+import bikeSport from "../assets/tuika/69D86AC5-791E-4A9C-8933-4A675FEB8D84.jpeg";
+import bikeAssist from "../assets/tuika/D37F937A-E0F7-4F2F-8222-65310BBDC5C5.jpeg";
+import staffFront from "../assets/tuika/D1E99866-C5A4-43C0-B64D-C44BDCC6A42E.jpeg";
+import staffOpen from "../assets/tuika/F13969C1-68FC-4CB4-BE4A-BD824B064052.jpeg";
+import staffCheer from "../assets/tuika/D3EBE32D-6E80-4521-BADB-05E7575F0E78.jpeg";
+import staffMat from "../assets/tuika/F6507ADE-A8ED-4F84-993D-F5F1696ACE3C.jpeg";
+import shopFloor from "../assets/tuika/73470DEB-4039-4647-9C36-C156EE4A70DE.jpeg";
+import shopFlower from "../assets/tuika/7DBC01E5-53D7-4EC0-9FE7-4FC30B77F299.jpeg";
+import shopTraining from "../assets/tuika/4BD08130-F63D-4007-B8B8-9FC99D4A3E86.jpeg";
 
 const title = "サイクルポイントナカネ｜大田区山王・大森の自転車屋";
 const description =
@@ -18,6 +28,74 @@ const instagram = "https://www.instagram.com/c.p.nakane/";
 const facebook = "https://www.facebook.com/c.p.nakane/";
 const appStore = "https://apps.apple.com/jp/app/サイクルポイント-ナカネ/id1640031428";
 const googlePlay = "https://play.google.com/store/apps/details?id=com.couponapp2.chain.tac22171&pcampaignid=web_share";
+const lineupPhotos = [
+  {
+    src: bikeCity,
+    alt: "かご付きの青い電動アシスト自転車。店内に並んでいる",
+    land: true,
+  },
+  {
+    src: bikeSport,
+    alt: "白いクロスバイク。店内のスポーツ車",
+    land: true,
+    position: "62% center",
+  },
+  {
+    src: bikeAssist,
+    alt: "黒いパナソニックの電動アシスト自転車",
+    land: false,
+    position: "center 40%",
+  },
+];
+const shopPhotos = [
+  {
+    src: entrance,
+    alt: "開いた入口から見える店内と、店先に並ぶ自転車",
+    land: true,
+    position: "center 48%",
+  },
+  {
+    src: staffCheer,
+    alt: "入口の前でピースをする、サイクルポイントナカネのスタッフ",
+    land: false,
+    position: "center 30%",
+  },
+  {
+    src: staffOpen,
+    alt: "花に囲まれた入口で、ピースをするスタッフ",
+    land: true,
+    position: "center 42%",
+  },
+  {
+    src: shopFloor,
+    alt: "お祝いの植木の奥に、店内へ並ぶ自転車",
+    land: false,
+    position: "center 62%",
+  },
+  {
+    src: staffFront,
+    alt: "サイクルポイントナカネの看板の前に立つ、黒いポロシャツのスタッフ4人",
+    land: true,
+  },
+  {
+    src: shopFlower,
+    alt: "祝御開店と書かれた、サイクルポイントナカネ宛ての木札",
+    land: false,
+    position: "center 40%",
+  },
+  {
+    src: staffMat,
+    alt: "店のロゴが入ったマットを掲げるスタッフと、花束",
+    land: false,
+    position: "center 46%",
+  },
+  {
+    src: shopTraining,
+    alt: "中学生職場体験に協力していることを示す、入口ガラスの青いステッカー",
+    land: false,
+    position: "center 55%",
+  },
+];
 const heroSlides = [
   {
     src: hero,
@@ -33,6 +111,11 @@ const heroSlides = [
     src: entrance,
     alt: "開いた入口から見える店内と、店先に並ぶ自転車",
     position: "center 48%",
+  },
+  {
+    src: wall,
+    alt: "タイルの壁に掛かった、サイクルポイントナカネの鉄の自転車看板",
+    position: "72% 42%",
   },
 ];
 const mapUrl =
@@ -307,8 +390,8 @@ const schema = {
             sizes="(min-width: 1120px) 1120px, 100vw"
           />
         </figure>
-        <div class="cards" data-stagger>
-          <article class="card" data-stagger-item>
+        <div class="cards">
+          <article class="card">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="16" cy="44" r="8"></circle>
@@ -321,7 +404,7 @@ const schema = {
             <h3>こども自転車</h3>
             <p>はじめての一台を、いっしょに。</p>
           </article>
-          <article class="card" data-stagger-item>
+          <article class="card">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="16" cy="44" r="8"></circle>
@@ -334,7 +417,7 @@ const schema = {
             <h3>ママチャリ</h3>
             <p>買い物も送り迎えも、毎日の足。</p>
           </article>
-          <article class="card" data-stagger-item>
+          <article class="card">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="16" cy="44" r="8"></circle>
@@ -347,7 +430,7 @@ const schema = {
             <h3>電動アシスト</h3>
             <p>坂道も荷物も、らくに。</p>
           </article>
-          <article class="card" data-stagger-item>
+          <article class="card">
             <div class="card__icon" aria-hidden="true">
               <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="16" cy="46" r="8"></circle>
@@ -362,6 +445,27 @@ const schema = {
             <p>風を切る楽しさを、この街から。</p>
           </article>
         </div>
+        <div class="reel" aria-label="店にある自転車">
+          <div class="reel__track">
+            {
+              [0, 1].map((copy) => (
+                <div class="reel__group" aria-hidden={copy === 1 ? "true" : undefined}>
+                  {lineupPhotos.map((photo) => (
+                    <figure class={photo.land ? "shot shot--land" : "shot"}>
+                      <Image
+                        src={photo.src}
+                        alt={copy === 1 ? "" : photo.alt}
+                        widths={[480, 750]}
+                        sizes="(min-width: 720px) 420px, 78vw"
+                        style={photo.position ? { objectPosition: photo.position } : undefined}
+                      />
+                    </figure>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
+        </div>
       </div>
     </section>
 
@@ -371,28 +475,29 @@ const schema = {
           <p class="kicker">SHOP</p>
           <h2 class="heading">山王の店先から。</h2>
           <p class="lead sublead">
-            木の看板と、店先に並ぶ自転車。大森駅から徒歩10分、山王店です。
+            木の看板と、店先に並ぶ自転車。<br />リニューアルオープンした、山王店です。
           </p>
         </div>
-        <div class="gallery" data-stagger>
-          <figure class="shot" data-stagger-item>
-            <Image
-              src={entrance}
-              alt="開いた入口から見える店内と、店先に並ぶ自転車"
-              widths={[480, 750]}
-              sizes="(min-width: 720px) 56vw, 100vw"
-            />
-            <figcaption>ひらかれた入口</figcaption>
-          </figure>
-          <figure class="shot" data-stagger-item>
-            <Image
-              src={wall}
-              alt="タイルの壁に掛かった、サイクルポイントナカネの鉄製看板"
-              widths={[480, 750]}
-              sizes="(min-width: 720px) 40vw, 100vw"
-            />
-            <figcaption>鉄の自転車看板</figcaption>
-          </figure>
+        <div class="reel reel--shop" aria-label="山王店の様子">
+          <div class="reel__track">
+            {
+              [0, 1].map((copy) => (
+                <div class="reel__group" aria-hidden={copy === 1 ? "true" : undefined}>
+                  {shopPhotos.map((photo) => (
+                    <figure class={photo.land ? "shot shot--land" : "shot"}>
+                      <Image
+                        src={photo.src}
+                        alt={copy === 1 ? "" : photo.alt}
+                        widths={[480, 750]}
+                        sizes="(min-width: 720px) 420px, 78vw"
+                        style={photo.position ? { objectPosition: photo.position } : undefined}
+                      />
+                    </figure>
+                  ))}
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </section>
