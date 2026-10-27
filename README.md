@@ -1,4 +1,9 @@
-# Astro Starter Kit: Minimal
+# サイクルポイントナカネ
+
+画像の差し替え先と各セクションの編集場所は、[編集ガイド](docs/EDITING.md)を参照してください。
+ヒーロー専用の画像は `src/assets/hero/`、その設定は `src/data/hero.ts` です。
+
+以下はプロジェクトのベースとなるAstroスターターの案内です。
 
 ```sh
 npm create astro@latest -- --template minimal
@@ -32,7 +37,7 @@ All commands are run from the root of the project, from a terminal:
 | Command                   | Action                                           |
 | :------------------------ | :----------------------------------------------- |
 | `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run astro -- dev --background` | Starts the background dev server          |
 | `npm run build`           | Build your production site to `./dist/`          |
 | `npm run preview`         | Preview your build locally, before deploying     |
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |

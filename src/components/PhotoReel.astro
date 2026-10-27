@@ -1,0 +1,34 @@
+---
+import { Image } from "astro:assets";
+import type { ReelPhoto } from "../types/photos";
+
+interface Props {
+  photos: ReelPhoto[];
+  label: string;
+  variant?: "default" | "shop";
+}
+
+const { photos, label, variant = "default" } = Astro.props;
+---
+
+<div class:list={["reel", { "reel--shop": variant === "shop" }]} aria-label={label}>
+  <div class="reel__track">
+    {
+      [0, 1].map((copy) => (
+        <div class="reel__group" aria-hidden={copy === 1 ? "true" : undefined}>
+          {photos.map((photo) => (
+            <figure class={photo.land ? "shot shot--land" : "shot"}>
+              <Image
+                src={photo.src}
+                alt={copy === 1 ? "" : photo.alt}
+                widths={[480, 750]}
+                sizes="(min-width: 720px) 420px, 78vw"
+                style={photo.position ? { objectPosition: photo.position } : undefined}
+              />
+            </figure>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</div>

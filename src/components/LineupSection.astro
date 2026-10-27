@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import street from "../assets/images/hero02.png";
+import { lineupPhotos } from "../data/lineup";
+import BrandLogos from "./BrandLogos.astro";
+import PhotoReel from "./PhotoReel.astro";
+---
+
+<section class="section lineup" id="lineup">
+  <div class="wrap">
+    <div class="center" data-reveal>
+      <p class="kicker">LINEUP</p>
+      <h2 class="heading">暮らしに合わせた<span class="phrase">一台を。</span></h2>
+      <p class="lead">
+        はじめての自転車から、走りを楽しむ一台まで。<br />目的に合わせて、スタッフがご案内します。
+      </p>
+    </div>
+    <figure class="band" data-reveal>
+      <Image
+        src={street}
+        alt="歩道に並んだ自転車と黒板。山王店の外観"
+        widths={[480, 750]}
+        sizes="(min-width: 1120px) 1120px, 100vw"
+      />
+    </figure>
+    <div class="cards">
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="44" r="8"></circle>
+            <circle cx="46" cy="44" r="8"></circle>
+            <path d="M16 44h14l8-16h8M30 44l8-16M30 28v-8"></path>
+            <path d="M30 16l8 4-8 4"></path>
+          </svg>
+        </div>
+        <p class="card__no">01</p>
+        <h3>こども自転車</h3>
+        <BrandLogos brands={["bridgestone", "maruishi", "khodaabloom", "riteway", "louisgarneau", "ides"]} />
+        <p class="card__etc">etc</p>
+      </article>
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="44" r="8"></circle>
+            <circle cx="46" cy="44" r="8"></circle>
+            <path d="M16 44h14l8-16h10M30 44l8-16"></path>
+            <path d="M44 22h12l-2 7H46Z"></path>
+          </svg>
+        </div>
+        <p class="card__no">02</p>
+        <h3>軽快車</h3>
+        <BrandLogos brands={["bridgestone", "maruishi", "hodaka", "sakamoto", "miyata"]} />
+      </article>
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="44" r="8"></circle>
+            <circle cx="46" cy="44" r="8"></circle>
+            <path d="M16 44h14l8-16h10M30 44l8-16"></path>
+            <path d="M33 30l-3 6h5l-3 7" fill="currentColor" stroke="none"></path>
+          </svg>
+        </div>
+        <p class="card__no">03</p>
+        <h3>電動アシスト自転車</h3>
+        <BrandLogos brands={["bridgestone", "panasonic", "maruishi"]} />
+      </article>
+      <article class="card">
+        <div class="card__icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="16" cy="46" r="8"></circle>
+            <circle cx="46" cy="46" r="8"></circle>
+            <path d="M16 46h12l10-18h6"></path>
+            <path d="M28 46l10-18"></path>
+            <path d="M44 28c7 0 10 3 10 8"></path>
+          </svg>
+        </div>
+        <p class="card__no">04</p>
+        <h3>スポーツ車</h3>
+        <BrandLogos brands={["bridgestone", "anchor", "merida", "khodaabloom", "riteway", "surly", "louisgarneau", "felt", "fuji", "gt"]} />
+      </article>
+    </div>
+    <PhotoReel photos={lineupPhotos} label="店にある自転車" />
+  </div>
+</section>

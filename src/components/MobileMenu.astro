@@ -1,0 +1,20 @@
+---
+import { instagram, facebook, appStore, googlePlay } from "../data/site";
+---
+
+<div class="drawer" id="mobile-menu" data-drawer inert>
+  <nav aria-label="モバイルメニュー">
+    <a href="#top">HOME</a>
+    <a href="#concept">CONCEPT</a>
+    <a href="#lineup">LINEUP</a>
+    <a href="#shop">SHOP</a>
+    <a href="#access">ACCESS</a>
+  </nav>
+  <div class="drawer__meta">
+    <a class="btn" href={appStore} target="_blank" rel="noopener noreferrer">App Store</a>
+    <a class="btn btn--line" href={googlePlay} target="_blank" rel="noopener noreferrer">Google Play</a>
+    <a class="btn btn--line" href={instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a class="btn btn--line" href={facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
+    <a class="btn btn--line" href="tel:0337711644">03-3771-1644</a>
+  </div>
+</div>

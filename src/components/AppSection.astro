@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import appPhoto from "../assets/images/IMG_2680.jpg";
+import { instagram, facebook, appStore, googlePlay } from "../data/site";
+---
+
+<section class="section app" id="app">
+  <div class="wrap app__grid">
+    <figure class="app__photo" data-reveal>
+      <Image
+        src={appPhoto}
+        alt="サイクルポイントナカネ公式アプリの案内スタンドと二次元コード"
+        widths={[480, 750]}
+        sizes="(min-width: 720px) 42vw, 100vw"
+      />
+    </figure>
+    <div data-reveal>
+      <p class="kicker">APP / SNS</p>
+      <h2 class="heading">公式アプリが<br />はじまりました。</h2>
+      <p class="lead sublead">
+        最新情報やお得なお知らせを、スマホで。<br /><span class="phrase">App Store と Google Play から</span><span class="phrase">ダウンロードできます。</span>
+      </p>
+      <div class="app__links">
+        <a class="btn" href={appStore} target="_blank" rel="noopener noreferrer">
+          App Store
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M16.4 12.6c0-2.2 1.8-3.2 1.9-3.3-1-1.5-2.6-1.7-3.2-1.7-1.3-.1-2.6.8-3.3.8s-1.7-.8-2.8-.7c-1.5.1-2.8.8-3.6 2.1-1.5 2.6-.4 6.5 1.1 8.6.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7 1.9-1.1 2.6-2.1c.8-1.2 1.1-2.3 1.2-2.4 0 0-2.2-.8-2.2-3.4ZM14.7 6.8c.6-.7 1-1.7.9-2.7-1 .1-2.1.6-2.8 1.4-.6.7-1.1 1.7-.9 2.6 1 .1 2.1-.5 2.8-1.3Z"></path>
+          </svg>
+        </a>
+        <a class="btn btn--light" href={googlePlay} target="_blank" rel="noopener noreferrer">
+          Google Play
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M4.2 3.2c-.3.3-.4.7-.4 1.2v15.2c0 .5.1.9.4 1.2l.1.1 8.5-8.5v-.2L4.3 3.1l-.1.1Zm9.3 8.1 2.4-2.4-9.6-5.5c-.3-.2-.6-.1-.8.1l8 7.8Zm2.9-1.7 2.1 1.2c.8.4.8 1.1 0 1.6l-2.1 1.2-2.6-2.6 2.6-1.4ZM5.5 20.5c.2.2.5.3.8.1l9.6-5.5-2.4-2.4-8 7.8Z"></path>
+          </svg>
+        </a>
+        <a class="btn btn--light" href={instagram} target="_blank" rel="noopener noreferrer">
+          Instagram
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+            <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.4" cy="6.6" r="0.8" fill="currentColor" stroke="none"></circle>
+          </svg>
+        </a>
+        <a class="btn btn--light" href={facebook} target="_blank" rel="noopener noreferrer">
+          Facebook
+          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor">
+            <path d="M14.2 21v-7.1h2.4l.4-2.8h-2.8V9.3c0-.8.2-1.4 1.4-1.4H17V5.4c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v2.2H9v2.8h2.4V21h2.8Z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

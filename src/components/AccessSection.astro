@@ -1,0 +1,61 @@
+---
+import { mapUrl } from "../data/site";
+---
+
+<section class="section" id="access">
+  <div class="wrap">
+    <div data-reveal>
+      <p class="kicker">ACCESS</p>
+      <h2 class="heading">気軽にご来店くださいませ。</h2>
+    </div>
+    <div class="access__grid">
+      <div data-reveal>
+        <dl class="info">
+          <div class="info__row">
+            <dt>ADDRESS</dt>
+            <dd>
+              〒143-0023<br />
+              東京都大田区山王3-9-2<br />
+              スプレスター大森山王1F 山王店
+            </dd>
+          </div>
+          <div class="info__row">
+            <dt>ACCESS</dt>
+            <dd>JR京浜東北線 大森駅から徒歩10分</dd>
+          </div>
+          <div class="info__row">
+            <dt>TEL</dt>
+            <dd><a class="phone" href="tel:0337711644">03-3771-1644</a></dd>
+          </div>
+          <div class="info__row">
+            <dt>OPEN</dt>
+            <dd>10:00〜18:30<br />平日・土・日・祝</dd>
+          </div>
+          <div class="info__row">
+            <dt>CLOSED</dt>
+            <dd>火曜日<br />祝日の火曜日もお休み</dd>
+          </div>
+          <div class="info__row">
+            <dt>PARKING</dt>
+            <dd>駐車場はありません。<br />お店の前に有料駐車場があります。</dd>
+          </div>
+          <div class="info__row">
+            <dt>PAYMENT</dt>
+            <dd>現金</dd>
+          </div>
+        </dl>
+      </div>
+      <div class="access__map" data-reveal>
+        <div class="map">
+          <iframe
+            title="サイクルポイントナカネの地図"
+            src="https://maps.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E5%A4%A7%E7%94%B0%E5%8C%BA%E5%B1%B1%E7%8E%8B3-9-2&z=16&hl=ja&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <a class="map__link" href={mapUrl} target="_blank" rel="noopener noreferrer">Googleマップで開く</a>
+      </div>
+    </div>
+  </div>
+</section>

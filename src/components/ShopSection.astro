@@ -1,0 +1,17 @@
+---
+import { shopPhotos } from "../data/shop";
+import PhotoReel from "./PhotoReel.astro";
+---
+
+<section class="section" id="shop">
+  <div class="wrap">
+    <div data-reveal>
+      <p class="kicker">SHOP</p>
+      <h2 class="heading">100年を超える歴史とともに、<br />これからも地域の皆さまへ。</h2>
+      <p class="lead sublead">
+        建て替えを経てリニューアルオープンした、山王店です。
+      </p>
+    </div>
+    <PhotoReel photos={shopPhotos} label="山王店の様子" variant="shop" />
+  </div>
+</section>

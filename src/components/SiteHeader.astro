@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import logoMark from "../assets/images/logo-mark.png";
+import { instagram } from "../data/site";
+import MobileMenu from "./MobileMenu.astro";
+---
+
+<header class="header" data-header>
+  <div class="header__bar">
+    <a class="brand" href="#top">
+      <span class="brand__mark">
+        <Image src={logoMark} alt="" widths={[124, 248]} sizes="62px" />
+      </span>
+      <span class="brand__text">
+        <span class="brand__name">サイクルポイントナカネ</span>
+        <span class="brand__since">SINCE 1920</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="メインメニュー">
+      <a href="#top">HOME</a>
+      <a href="#concept">CONCEPT</a>
+      <a href="#lineup">LINEUP</a>
+      <a href="#shop">SHOP</a>
+      <a href="#access">ACCESS</a>
+    </nav>
+
+    <a class="btn header__ig" href={instagram} target="_blank" rel="noopener noreferrer">
+      Instagram
+      <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+        <circle cx="12" cy="12" r="4"></circle>
+        <circle cx="17.4" cy="6.6" r="0.8" fill="currentColor" stroke="none"></circle>
+      </svg>
+    </a>
+
+    <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="mobile-menu" aria-label="メニューを開く">
+      <span class="menu-btn__lines" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
+</header>
+
+<MobileMenu />

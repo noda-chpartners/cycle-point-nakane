@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import logoLockup from "../assets/images/logo-lockup.png";
+---
+
+<div class="progress" data-progress aria-hidden="true"></div>
+
+<div class="loader" data-loader>
+  <div class="loader__card">
+    <Image src={logoLockup} alt="" class="loader__logo" widths={[280, 384]} sizes="280px" />
+  </div>
+  <p class="loader__label">LOADING</p>
+  <div class="loader__track" aria-hidden="true"><span data-loader-bar></span></div>
+</div>
+
+<noscript>
+  <style>
+    .loader { display: none !important; }
+  </style>
+</noscript>

@@ -85,22 +85,6 @@ function setupMenu() {
 function setupMotion() {
   if (reduce) return;
 
-  const hero = gsap.timeline({ paused: true, defaults: { ease: "power3.out" } });
-  hero
-    .from(".hero__kicker", { y: 16, autoAlpha: 0, duration: 0.6 })
-    .from(".hero__title .line span", { yPercent: 110, duration: 0.9, stagger: 0.09 }, "-=0.3")
-    .from(".hero__lead", { y: 18, autoAlpha: 0, duration: 0.7 }, "-=0.45")
-    .from(".hero__actions", { y: 16, autoAlpha: 0, duration: 0.6 }, "-=0.4")
-    .from(".hero__scroll", { autoAlpha: 0, duration: 0.5 }, "-=0.2");
-
-  gsap.to(".hero__scroll", {
-    y: 8,
-    duration: 1.15,
-    ease: "sine.inOut",
-    repeat: -1,
-    yoyo: true,
-  });
-
   gsap.utils.toArray<HTMLElement>("[data-reveal]").forEach((el) => {
     gsap.from(el, {
       y: 32,
@@ -130,20 +114,6 @@ function setupMotion() {
     });
   });
 
-  const mm = gsap.matchMedia();
-  mm.add("(min-width: 900px)", () => {
-    gsap.to(".hero__photo", {
-      yPercent: 6,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
-  });
-
   const bar = document.querySelector<HTMLElement>("[data-progress]");
   if (bar) {
     gsap.set(bar, { scaleX: 0, transformOrigin: "left center" });
@@ -159,53 +129,11 @@ function setupMotion() {
     });
   }
 
-  return hero;
 }
 
-function setupHeroSlides() {
-  if (reduce) return;
-
-  const slides = gsap.utils.toArray<HTMLElement>(".hero__photo");
-  if (slides.length < 2) return;
-
-  let current = 0;
-  gsap.set(slides, { autoAlpha: 0, scale: 1, zIndex: 1 });
-  gsap.set(slides[0], { autoAlpha: 1, zIndex: 2 });
-
-  const showNext = () => {
-    const from = slides[current];
-    const nextIndex = (current + 1) % slides.length;
-    const to = slides[nextIndex];
-
-    gsap.to(from, { scale: 1.06, duration: 5.6, ease: "none", overwrite: "auto" });
-    gsap.delayedCall(4.6, () => {
-      gsap.set(from, { zIndex: 1 });
-      gsap.set(to, { scale: 1, autoAlpha: 0, zIndex: 2 });
-      gsap.to(to, {
-        autoAlpha: 1,
-        duration: 1.7,
-        ease: "power2.inOut",
-        onComplete: () => {
-          gsap.set(from, { autoAlpha: 0, scale: 1 });
-          current = nextIndex;
-          showNext();
-        },
-      });
-    });
-  };
-
-  showNext();
-}
-
-function hideLoader(playHero?: gsap.core.Timeline) {
-  const start = () => {
-    playHero?.play();
-    setupHeroSlides();
-    ScrollTrigger.refresh();
-  };
-
+function hideLoader() {
   if (!loader) {
-    start();
+    ScrollTrigger.refresh();
     return;
   }
 
@@ -220,7 +148,7 @@ function hideLoader(playHero?: gsap.core.Timeline) {
     defaults: { ease: "power3.out" },
     onComplete: () => {
       loader.remove();
-      start();
+      ScrollTrigger.refresh();
     },
   });
 
@@ -233,7 +161,7 @@ function hideLoader(playHero?: gsap.core.Timeline) {
 setupSmoothScroll();
 setupHeader();
 setupMenu();
-const hero = setupMotion();
-hideLoader(hero);
+setupMotion();
+hideLoader();
 
 window.addEventListener("load", () => ScrollTrigger.refresh());

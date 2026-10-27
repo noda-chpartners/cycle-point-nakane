@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets";
+import { heroImage } from "../data/hero";
+---
+
+<section class="hero" id="top">
+  <div class="hero__media">
+    <Image
+      src={heroImage.src}
+      alt={heroImage.alt}
+      class="hero__photo"
+      style={`object-position: ${heroImage.position}`}
+      widths={[480, 750]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+    />
+    <div class="hero__shade"></div>
+  </div>
+  <div class="hero__copy">
+    <p class="hero__kicker">CYCLE POINT NAKANE</p>
+    <p class="hero__renewal"><time datetime="2026-07-10">2026.7.10</time> リニューアルオープン</p>
+    <h1 class="hero__title">
+      <span class="line"><span>この街の、</span></span>
+      <span class="line"><span>自転車屋さん。</span></span>
+    </h1>
+    <p class="hero__lead">創業大正9年。大田区山王で、100年をこえて。</p>
+    <div class="hero__actions">
+      <a class="btn btn--ghost" href="tel:0337711644">03-3771-1644</a>
+    </div>
+  </div>
+  <a class="hero__scroll" href="#concept">
+    SCROLL
+    <span></span>
+  </a>
+  <svg class="hero__wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true">
+    <path fill="#f4efe6" d="M0 62c160 36 300-28 470-8 190 22 330-40 520-8 120 20 250 8 450-6v70H0Z"></path>
+  </svg>
+</section>
