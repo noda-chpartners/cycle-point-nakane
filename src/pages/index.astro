@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
+import BrandLogos from "../components/BrandLogos.astro";
 import logoMark from "../assets/images/logo-mark.png";
 import logoLockup from "../assets/images/logo-lockup.png";
 import hero from "../assets/images/6B461B56-8C31-4CAB-B4DE-548C2E713A43.jpeg";
@@ -22,7 +23,7 @@ import shopTraining from "../assets/tuika/4BD08130-F63D-4007-B8B8-9FC99D4A3E86.j
 
 const title = "サイクルポイントナカネ｜大田区山王・大森の自転車屋";
 const description =
-  "大田区山王の自転車屋、サイクルポイントナカネ。創業大正9年。こども自転車・ママチャリ・電動アシスト・スポーツ車。JR大森駅徒歩10分。10:00〜18:30、火曜定休。電話 03-3771-1644。";
+  "大田区山王の自転車屋、サイクルポイントナカネ。1920年（大正9年）創業、2026年7月10日リニューアルオープン。こども自転車・軽快車・電動アシスト自転車・スポーツ車。JR大森駅徒歩10分。10:00〜18:30、火曜定休。電話 03-3771-1644。";
 
 const instagram = "https://www.instagram.com/c.p.nakane/";
 const facebook = "https://www.facebook.com/c.p.nakane/";
@@ -186,7 +187,7 @@ const schema = {
         areaServed: "JP",
         availableLanguage: "Japanese",
       },
-      knowsAbout: ["こども自転車", "ママチャリ", "電動アシスト自転車", "スポーツ車"],
+      knowsAbout: ["こども自転車", "軽快車", "電動アシスト自転車", "スポーツ車"],
       sameAs: [instagram, facebook, appStore, googlePlay],
     },
   ],
@@ -283,7 +284,8 @@ const schema = {
         <div class="hero__shade"></div>
       </div>
       <div class="hero__copy">
-        <p class="hero__kicker">Cycle Point Nakane</p>
+        <p class="hero__kicker">CYCLE POINT NAKANE</p>
+        <p class="hero__renewal"><time datetime="2026-07-10">2026.7.10</time> リニューアルオープン</p>
         <h1 class="hero__title">
           <span class="line"><span>この街の、</span></span>
           <span class="line"><span>自転車屋さん。</span></span>
@@ -305,7 +307,7 @@ const schema = {
     <section aria-label="店舗の基本情報">
       <div class="wrap">
         <ul class="facts">
-          <li><span>SINCE</span><strong>大正9年</strong></li>
+          <li><span>SINCE</span><strong>1920年（大正9年）</strong></li>
           <li><span>OPEN</span><strong>10:00〜18:30</strong></li>
           <li><span>CLOSED</span><strong>火曜日</strong></li>
           <li><span>ACCESS</span><strong>大森駅 徒歩10分</strong></li>
@@ -317,43 +319,42 @@ const schema = {
       <div class="wrap concept__grid">
         <div class="concept__copy" data-reveal>
           <p class="kicker">CONCEPT</p>
-          <h2 class="heading"><span>100年、</span><span>この街と一緒に。</span></h2>
+          <h2 class="heading"><span>100年を超える歴史と、</span><span>変わらぬ信頼。</span></h2>
           <div class="concept__body lead">
             <p>
-              大正9年（1920年）の創業から、<br />
-              大田区山王で、<br />
-              自転車を届けてきました。<br />
-              100年を越えても、<br />
-              顔の見えるお店でありたい。<br />
-              その気持ちは変わりません。
+              大正9年（1920年）創業から<br />
+              地元の皆さまとともに歩んできた、街の自転車屋です。100年を越えても、変わらぬ信頼、受け継がれる技術！
             </p>
             <p>
-              こども自転車、ママチャリ、<br />
-              電動アシスト、スポーツ車まで。<br />
-              自転車のことは、<br />
-              どうぞお気軽にご相談ください。
+              子ども用自転車から一般自転車、電動アシスト自転車、スポーツバイクまで。
             </p>
+            <p>自転車のことなら、何でもお気軽にご相談ください。</p>
+            <p>変わらぬ信頼と技術で、皆さまの快適な自転車ライフをサポートいたします。</p>
           </div>
           <ul class="concept__points">
             <li>
               <small>01</small>
               <div>
                 <strong>創業大正9年</strong>
-                <p>1920年から、山王で自転車とともに。</p>
+                <p>1920年から、親子４代続く<br />兄弟で営む106年目の自転車屋</p>
               </div>
             </li>
             <li>
               <small>02</small>
               <div>
-                <strong>100年を越える地域密着</strong>
-                <p>顔の見える、まちの自転車屋です。</p>
+                <strong>ブリヂストンのエキスパートショップ店</strong>
+                <p>ブリヂストン自転車をお探しなら、ぜひ当店へ。</p>
+                <p>子ども用自転車から一般自転車、電動アシスト自転車、スポーツバイクまで、幅広くご相談いただけます。</p>
+                <p>自転車選びはもちろん、ご購入後の修理やメンテナンスも丁寧にサポート。<br />（ブリヂストンパナソニック修理サポート店）</p>
               </div>
             </li>
             <li>
               <small>03</small>
               <div>
-                <strong>一台から、スポーツまで</strong>
-                <p>こども自転車、ママチャリ、電動アシスト、スポーツ車。</p>
+                <strong>お客様の暮らしに合った自転車選びを</strong>
+                <p>通勤・通学、お買い物、お子様の自転車から、電動アシスト自転車、スポーツバイクまで。</p>
+                <p>お客様の用途やご要望、ご予算に合わせて、最適な一台をご提案いたします。</p>
+                <p>創業106年の歴史で培った信頼と技術で、自転車選びからご購入後の修理・メンテナンスまで、安心してお任せいただけるお店を目指しています。</p>
               </div>
             </li>
           </ul>
@@ -402,7 +403,8 @@ const schema = {
             </div>
             <p class="card__no">01</p>
             <h3>こども自転車</h3>
-            <p>はじめての一台を、いっしょに。</p>
+            <BrandLogos brands={["bridgestone", "maruishi", "khodaabloom", "riteway", "louisgarneau", "ides"]} />
+            <p class="card__etc">etc</p>
           </article>
           <article class="card">
             <div class="card__icon" aria-hidden="true">
@@ -414,8 +416,8 @@ const schema = {
               </svg>
             </div>
             <p class="card__no">02</p>
-            <h3>ママチャリ</h3>
-            <p>買い物も送り迎えも、毎日の足。</p>
+            <h3>軽快車</h3>
+            <BrandLogos brands={["bridgestone", "maruishi", "hodaka", "sakamoto", "miyata"]} />
           </article>
           <article class="card">
             <div class="card__icon" aria-hidden="true">
@@ -427,8 +429,8 @@ const schema = {
               </svg>
             </div>
             <p class="card__no">03</p>
-            <h3>電動アシスト</h3>
-            <p>坂道も荷物も、らくに。</p>
+            <h3>電動アシスト自転車</h3>
+            <BrandLogos brands={["bridgestone", "panasonic", "maruishi"]} />
           </article>
           <article class="card">
             <div class="card__icon" aria-hidden="true">
@@ -442,7 +444,7 @@ const schema = {
             </div>
             <p class="card__no">04</p>
             <h3>スポーツ車</h3>
-            <p>風を切る楽しさを、この街から。</p>
+            <BrandLogos brands={["bridgestone", "anchor", "merida", "khodaabloom", "riteway", "surly", "louisgarneau", "felt", "fuji", "gt"]} />
           </article>
         </div>
         <div class="reel" aria-label="店にある自転車">
@@ -473,9 +475,9 @@ const schema = {
       <div class="wrap">
         <div data-reveal>
           <p class="kicker">SHOP</p>
-          <h2 class="heading">山王の店先から。</h2>
+          <h2 class="heading">100年を超える歴史とともに、<br />これからも地域の皆さまへ。</h2>
           <p class="lead sublead">
-            木の看板と、店先に並ぶ自転車。<br />リニューアルオープンした、山王店です。
+            建て替えを経てリニューアルオープンした、山王店です。
           </p>
         </div>
         <div class="reel reel--shop" aria-label="山王店の様子">
@@ -554,7 +556,7 @@ const schema = {
       <div class="wrap">
         <div data-reveal>
           <p class="kicker">ACCESS</p>
-          <h2 class="heading"><span class="phrase">遊びに来るように、</span><span class="phrase">寄ってください。</span></h2>
+          <h2 class="heading">気軽にご来店くださいませ。</h2>
         </div>
         <div class="access__grid">
           <div data-reveal>
