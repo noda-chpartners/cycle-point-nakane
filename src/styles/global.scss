@@ -700,14 +700,23 @@ ol {
   }
 }
 
-.concept .heading {
+.concept .concept__title {
   max-width: 100%;
-  font-size: clamp(1.7rem, 7vw, 3.2rem);
-  overflow-wrap: anywhere;
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  word-break: normal;
+  overflow-wrap: normal;
+  text-wrap: wrap;
 
-  span {
+  .concept__title-line {
     display: block;
     max-width: 100%;
+  }
+
+  .concept__title-phrase {
+    display: inline-block;
+    white-space: nowrap;
   }
 }
 
