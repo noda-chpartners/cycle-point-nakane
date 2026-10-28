@@ -1,60 +1,60 @@
 import type { ReelPhoto } from "../types/photos";
-import entrance from "../assets/images/hero02.png";
-import staffFront from "../assets/tuika/D1E99866-C5A4-43C0-B64D-C44BDCC6A42E.jpeg";
-import staffOpen from "../assets/tuika/F13969C1-68FC-4CB4-BE4A-BD824B064052.jpeg";
-import staffCheer from "../assets/tuika/D3EBE32D-6E80-4521-BADB-05E7575F0E78.jpeg";
-import staffMat from "../assets/tuika/F6507ADE-A8ED-4F84-993D-F5F1696ACE3C.jpeg";
-import shopFloor from "../assets/tuika/73470DEB-4039-4647-9C36-C156EE4A70DE.jpeg";
-import shopFlower from "../assets/tuika/7DBC01E5-53D7-4EC0-9FE7-4FC30B77F299.jpeg";
-import shopTraining from "../assets/tuika/4BD08130-F63D-4007-B8B8-9FC99D4A3E86.jpeg";
+import shopFront from "../assets/tuika02/S__40034320_0.jpg";
+import staffFront from "../assets/tuika02/S__40034309_0.jpg";
+import staffMat from "../assets/tuika02/S__40034310_0.jpg";
+import entrance from "../assets/tuika02/S__40034319_0.jpg";
+import counterDisplay from "../assets/tuika02/S__40034324_0.jpg";
+import counterLogo from "../assets/tuika02/S__40034325_0.jpg";
+import shopSign from "../assets/tuika02/S__40034311_0.jpg";
+import signDetail from "../assets/tuika02/S__40034321_0.jpg";
 
 // SHOPの写真スライド専用。ヒーローの写真とは独立して管理します。
 export const shopPhotos: ReelPhoto[] = [
   {
-    src: entrance,
-    alt: "開いた入口から見える店内と、店先に並ぶ自転車",
+    src: shopFront,
+    alt: "開店祝いの花と自転車が並ぶ山王店の正面外観",
     land: true,
     position: "center 48%",
   },
   {
-    src: staffCheer,
-    alt: "入口の前でピースをする、サイクルポイントナカネのスタッフ",
-    land: false,
-    position: "center 30%",
-  },
-  {
-    src: staffOpen,
-    alt: "花に囲まれた入口で、ピースをするスタッフ",
-    land: true,
-    position: "center 42%",
-  },
-  {
-    src: shopFloor,
-    alt: "お祝いの植木の奥に、店内へ並ぶ自転車",
-    land: false,
-    position: "center 62%",
-  },
-  {
     src: staffFront,
-    alt: "サイクルポイントナカネの看板の前に立つ、黒いポロシャツのスタッフ4人",
-    land: true,
-  },
-  {
-    src: shopFlower,
-    alt: "祝御開店と書かれた、サイクルポイントナカネ宛ての木札",
+    alt: "サイクルポイントナカネの店舗入口でポーズをとるスタッフ4人",
     land: false,
-    position: "center 40%",
+    position: "center 45%",
   },
   {
     src: staffMat,
-    alt: "店のロゴが入ったマットを掲げるスタッフと、花束",
+    alt: "店のロゴが入ったマットを掲げるスタッフ4人",
     land: false,
-    position: "center 46%",
+    position: "center 45%",
   },
   {
-    src: shopTraining,
-    alt: "中学生職場体験に協力していることを示す、入口ガラスの青いステッカー",
+    src: entrance,
+    alt: "木の看板と開いた入口から店内が見える山王店の外観",
+    land: true,
+    position: "center 65%",
+  },
+  {
+    src: counterDisplay,
+    alt: "Since 1920の立体文字と公式アプリの案内が置かれたカウンター",
+    land: true,
+  },
+  {
+    src: counterLogo,
+    alt: "CYCLE POINT NAKANE Since 1920の文字が付いた木製カウンター",
     land: false,
     position: "center 55%",
+  },
+  {
+    src: shopSign,
+    alt: "電球に照らされた、自転車をかたどったサイクルポイントナカネの看板",
+    land: true,
+    position: "center center",
+  },
+  {
+    src: signDetail,
+    alt: "自転車の部品とSince 1920の文字で作られた看板の細部",
+    land: true,
+    position: "center center",
   },
 ];
